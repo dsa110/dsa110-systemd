@@ -1,0 +1,17 @@
+[Unit]
+Description=DSA110 Antenna MC Service
+Documentation=man:antmc
+After=network-online.target
+
+[Service]
+User=ubuntu
+Environment="PYTHONPATH=/home/ubuntu/proj/dsa110-shell/dsa110-hwmc"
+WorkingDirectory=/home/ubuntu/proj/dsa110-shell/dsa110-hwmc
+ExecStart=/home/ubuntu/proj/dsa110-shell/dsa110-hwmc/interfaces/start_hwmc.py --etcd-ip etcdv3service:2379
+ExecReload=/usr/bin/pkill -9 -f start_hwmc.py && /home/ubuntu/proj/dsa110-shell/dsa110-hwmc/interfaces/start_hwmc.py --etcd-ip etcdv3service:2379
+ExecStop=/usr/bin/pkill -9 -f start_hwmc.py
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
