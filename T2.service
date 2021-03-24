@@ -1,0 +1,12 @@
+[Unit]
+Description=T2 Service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/proj/dsa110-shell/dsa110-T2/scripts
+ExecStart=/home/ubuntu/anaconda3/envs/casa/bin/python run_T2.py
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target

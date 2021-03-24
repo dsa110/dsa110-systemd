@@ -1,0 +1,12 @@
+[Unit]
+Description=Corr Service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/proj/dsa110-shell/dsa110-xengine/scripts
+ExecStart=/home/ubuntu/anaconda3/envs/casa/bin/python /home/ubuntu/proj/dsa110-shell/dsa110-xengine/scripts/corr.py -in search -cn 17
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
