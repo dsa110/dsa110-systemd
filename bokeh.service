@@ -1,0 +1,9 @@
+[Unit]
+Description=Bokeh Service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/proj/dsa110-shell/dsa110-vis
+ExecStart=/home/ubuntu/anaconda3/envs/casa/bin/bokeh serve antmon.py --allow-websocket-origin=localhost:5006
+StandardOutput=syslog
+StandardError=syslog
