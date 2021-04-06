@@ -7,6 +7,7 @@ Check the systemd [tutorial](https://github.com/torfsen/python-systemd-tutorial)
 service | location | user
 ------- | -------- | ----
 antmc   | antservice | ubuntu
+bokeh   | bokehservice | ubuntu
 corr | corr01-16 | ubuntu
 search | corr17-20 | ubuntu
 T2 | corr00 | ubuntu
