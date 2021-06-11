@@ -1,0 +1,21 @@
+# systemd unit file for calibration preprocessing service
+
+[Unit]
+
+Description=Send cands
+
+[Service]
+
+# Command to execute when service started
+ExecStart=/home/user/anaconda3/envs/casa/bin/python /home/user/vikram/PLOTS/send_cands.py
+
+# Prevent python buffering; write to syslog
+Environment=PYTHONUNBUFFERED=1
+
+# Restart service on failure
+Restart=on-failure
+
+[Install]
+
+# Automatically start service on boot
+WantedBy=default.target
