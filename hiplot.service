@@ -1,0 +1,8 @@
+[Unit]
+Description=hiplot Service
+
+[Service]
+WorkingDirectory=/home/user/data/T2
+ExecStart=/home/user/anaconda3/envs/casa/bin/hiplot --port 5007
+StandardOutput=syslog
+StandardError=syslog
