@@ -18,6 +18,8 @@ calibration | dsa-storage | user
 bfcopy | dsa-storage | user
 bokeh   | bokehservice | ubuntu
 hiplot  | dsa-storage | user
+daskscheduler | h23 | user
+dashworker | h23 | user
 
 ## Ensure start after networking is up
 To ensure the service is started after networking is up(nice for those services connecting to etcd), add the following under the [Unit] declaration:

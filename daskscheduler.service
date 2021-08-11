@@ -1,0 +1,11 @@
+[Unit]
+Description=Dask Scheduler Service
+
+[Service]
+Type=simple
+ExecStart=/home/claw/anaconda3/envs/py37/bin/dask-scheduler
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
