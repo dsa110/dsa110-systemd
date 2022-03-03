@@ -7,14 +7,17 @@ Check the systemd [tutorial](https://github.com/torfsen/python-systemd-tutorial)
 service | location | user
 ------- | -------- | ----
 antmc   | antservice | ubuntu
-bokeh   | bokehservice | ubuntu
 corr | corr01-16 | ubuntu
 search | corr17-20 | ubuntu
 T2 | corr00 | ubuntu
 voltage | corr01-16 | ubuntu
-bfcopy | dsastorage | user
-calibration_preprocessing | dsastorage | user
-calibration | dsastorage | user
+trigger_copy | dsa-storage | user
+send_cands | dsa-storage | user
+calibration_preprocessing | dsa-storage | user
+calibration | dsa-storage | user
+bfcopy | dsa-storage | user
+bokeh   | bokehservice | ubuntu
+hiplot  | dsa-storage | user
 
 ## Ensure start after networking is up
 To ensure the service is started after networking is up(nice for those services connecting to etcd), add the following under the [Unit] declaration:
@@ -22,7 +25,7 @@ To ensure the service is started after networking is up(nice for those services 
 `After=network-online.target`
 
 ## Enable. To start after a reboot
-'systemctl --user enable <service>`
+`systemctl --user enable <service>`
 
 ## Run
 
