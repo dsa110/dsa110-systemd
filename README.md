@@ -22,6 +22,7 @@ hiplot  | dsa-storage | user
 dask-scheduler | h23 | user
 dask-worker<n> | h23 | user
 statusmon | h23 | user
+dashboard | h23 | user
 
 ## Ensure start after networking is up
 To ensure the service is started after networking is up(nice for those services connecting to etcd), add the following under the [Unit] declaration:

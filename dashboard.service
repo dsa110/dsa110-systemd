@@ -1,0 +1,21 @@
+# systemd unit file for dashboard
+
+[Unit]
+
+Description=dashboard
+
+[Service]
+
+# Command to execute when service started
+ExecStart=/home/ubuntu/anaconda3/envs/casa/bin/panel serve /home/ubuntu/proj/dsa110-shell/dsa110-vis/unified_dashboard.ipynb --port 5008
+
+# Prevent python buffering; write to syslog
+Environment=PYTHONUNBUFFERED=1
+
+# Restart service on failure
+Restart=on-failure
+
+[Install]
+
+# Automatically start service on boot
+WantedBy=default.target
