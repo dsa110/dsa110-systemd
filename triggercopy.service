@@ -7,11 +7,7 @@ Description=T1/T2 Copy Service
 [Service]
 
 # Command to execute when service started
-<<<<<<< HEAD:send_cands.service
-ExecStart=/home/ubuntu/anaconda3/envs/casa/bin/python /home/ubuntu/dana/code/dsa110-T3/services/send_cands.py
-=======
 ExecStart=/home/user/anaconda3/envs/casa/bin/python /mnt/data/dsa110/T3/scripts/run_rsync.py
->>>>>>> c4eae8a8139143779c4efc114616ffb33b9b3633:triggercopy.service
 
 # Prevent python buffering; write to syslog
 Environment=PYTHONUNBUFFERED=1
