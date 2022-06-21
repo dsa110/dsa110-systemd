@@ -1,0 +1,22 @@
+# systemd unit file for declination service
+
+[Unit]
+
+Description=Declination Service
+
+[Service]
+
+# Command to execute when service started
+WorkingDirectory=/home/ubuntu/servicewd/
+ExecStart=/home/ubuntu/anaconda3/envs/casa/bin/python /home/ubuntu/proj/dsa110-shell/dsa110-pyutils/services/update_declination.py
+
+# Prevent python buffering; write to syslog
+Environment=PYTHONUNBUFFERED=1
+
+# Restart service on failure
+Restart=on-failure
+
+[Install]
+
+# Automatically start service on boot
+WantedBy=default.target
