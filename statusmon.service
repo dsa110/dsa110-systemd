@@ -7,7 +7,7 @@ Description=statusmon update
 [Service]
 
 # Command to execute when service started
-ExecStart=/home/ubuntu/anaconda3/envs/casa/bin/dsamon run-status-loop
+ExecStart=/home/ubuntu/anaconda3/envs/casa38/bin/dsamon run-status-loop
 
 # Prevent python buffering; write to syslog
 Environment=PYTHONUNBUFFERED=1
