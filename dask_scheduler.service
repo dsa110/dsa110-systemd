@@ -2,12 +2,12 @@
 
 [Unit]
 
-Description=Dask worker
+Description=Dask scheduler
 
 [Service]
 
 # Command to execute when service started
-ExecStart=/home/ubuntu/anaconda3/envs/casa38/bin/dask-worker 10.42.0.232:8786 --memory-limit 60GB --nworkers 1 --nthreads 2 --resources "MEMORY=60e9"
+ExecStart=/home/ubuntu/anaconda3/envs/casa38/bin/dask-scheduler 
 ExecStop=/bin/true
 
 # Prevent python buffering; write to syslog
