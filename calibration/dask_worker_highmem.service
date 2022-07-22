@@ -1,14 +1,15 @@
-# systemd unit file for calibration preprocessing service
+# systemd unit file for dask worker
 
 [Unit]
 
-Description=Continuum Trigger Service
+Description=Dask worker
 
 [Service]
 
 # Command to execute when service started
 WorkingDirectory=/home/ubuntu/servicewd/
-ExecStart=/home/ubuntu/anaconda3/envs/casa/bin/python /home/ubuntu/proj/dsa110-shell/dsa110-calib/services/continuum_voltage_triggers.py
+ExecStart=/home/ubuntu/anaconda3/envs/casa38/bin/dask-worker 10.41.0.104:8786 --memory-limit 60GB --nworkers 1 --nthreads 8 --resources "MEMORY=60e9"
+ExecStop=/bin/true
 
 # Prevent python buffering; write to syslog
 Environment=PYTHONUNBUFFERED=1

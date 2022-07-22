@@ -1,4 +1,5 @@
 # systemd unit file for calibration preprocessing service
+# WARNING: Deprecated.  Used realtime_calibration.service instead
 
 [Unit]
 

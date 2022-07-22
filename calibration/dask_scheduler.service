@@ -1,0 +1,23 @@
+# systemd unit file for dask scheduler
+
+[Unit]
+
+Description=Dask scheduler
+
+[Service]
+
+# Command to execute when service started
+WorkingDirectory=/home/ubuntu/servicewd/
+ExecStart=/home/ubuntu/anaconda3/envs/casa38/bin/dask-scheduler
+ExecStop=/bin/true
+
+# Prevent python buffering; write to syslog
+Environment=PYTHONUNBUFFERED=1
+
+# Restart service on failure
+Restart=on-failure
+
+[Install]
+
+# Automatically start service on boot
+WantedBy=default.target
