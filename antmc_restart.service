@@ -1,0 +1,13 @@
+[Unit]
+Description=DSA110 Antenna MC Service
+Documentation=man:antmc
+After=network-online.target
+
+[Service]
+WorkingDirectory=/home/ubuntu/proj/dsa110-shell/dsa110-systemd
+ExecStart=/bin/bash -ec 'source /home/ubuntu/anaconda3/bin/activate casa && python antmc_restart.py'
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
