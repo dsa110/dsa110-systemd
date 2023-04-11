@@ -17,7 +17,7 @@ while True:
         except AttributeError:
             pass
 
-    dt = 24*3600*(Time.now().mjd-max(dts))
+    dt = 24*3600*(Time.now().mjd-min(dts))
     if dt > thresh:
         print(f'\tStale ant monitor points ({dt}). Restarting antmc...')
         os.system('sudo systemctl restart antmc')
