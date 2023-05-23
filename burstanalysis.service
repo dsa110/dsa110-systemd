@@ -1,0 +1,22 @@
+# systemd unit file for dashboard
+
+[Unit]
+
+Description=burstanalysis
+
+[Service]
+
+# Command to execute when service started
+WorkingDirectory=/home/ubuntu/proj/dsa110-shell/dsa110-vis
+ExecStart=/home/ubuntu/anaconda3/envs/casa38/bin/panel serve /home/ubuntu/proj/dsa110-shell/dsa110-vis/burstanalysis.ipynb --port 5009
+
+# Prevent python buffering; write to syslog
+Environment=PYTHONUNBUFFERED=1
+
+# Restart service on failure
+Restart=on-failure
+
+[Install]
+
+# Automatically start service on boot
+WantedBy=default.target
