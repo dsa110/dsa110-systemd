@@ -17,11 +17,13 @@ while True:
         except AttributeError:
             pass
 
-    dt = 24*3600*(Time.now().mjd-min(dts))
-    if dt > thresh:
-        print(f'\tStale ant monitor points ({dt}). Restarting antmc...')
-        os.system('sudo systemctl restart antmc')
-        print('*', end='')
+    dts = sorted(dts)
+    dt0 = 24*3600*(Time.now().mjd-dts[0])
+    dt4 = 24*3600*(Time.now().mjd-dts[4])
+    if dt0 > thresh:
+        print(f'\t Oldest ant monitor point ({dt0}) is stale. Continuing...')
+        if dt4 > thresh:
+            print(f'\t Five oldest ant monitor points ({dt4} are stale). Restarting antmc...')
+            os.system('sudo systemctl restart antmc')
         sleep(longwait)
-    print('.', end='')
     sleep(wait)
