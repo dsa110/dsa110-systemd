@@ -12,6 +12,7 @@ ExecStop=/bin/true
 
 # Prevent python buffering; write to syslog
 Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=/home/ubuntu/.config/systemd/user/environment.conf
 
 # Restart service on failure
 Restart=on-failure

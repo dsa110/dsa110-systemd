@@ -11,6 +11,7 @@ ExecStart=/home/ubuntu/anaconda3/envs/casa38/bin/dsamon run-status-loop
 
 # Prevent python buffering; write to syslog
 Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=/home/ubuntu/.config/systemd/user/environment.conf
 
 # Restart service on failure
 Restart=on-failure
